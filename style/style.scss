@@ -1,0 +1,118 @@
+$primaryColor: #F7EDE2;
+$secondaryColor: #333333;
+$tertiaryColor: #707070;
+$accentOneColor: #06D6A0;
+$accentTwoColor: #EF476F;
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background: $primaryColor;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    display: block;
+    margin-left: 5px;
+    height: 90px;
+}
+
+.typewriter {
+    text-align: center;
+    height: 90px;
+}
+
+.main .name {
+    text-align: center;
+    color: $tertiaryColor;
+    font-weight: lighter;
+    font-size: 35px;
+}
+
+.auto-type-item {
+    justify-content: center;
+    color: $secondaryColor;
+    font-size: 60px;
+}
+
+.typed-cursor {
+    position: relative;
+    color: $accentOneColor;
+    font-size: 70px;
+}
+
+.social-burger {
+    position: absolute;
+    padding: 25px;
+    margin: 25px;
+    padding: auto;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .2);
+
+    .icon-wrapper {
+        margin: 0;
+        padding: 0;
+        width: 0;
+        overflow: hidden;
+        transition: 0.5s;
+        // text-align: center;
+        // float: left;
+        // width: 46px;
+        // height: 46px;
+        // border: 1px solid $tertiaryColor;
+        // border-radius: 100%;
+        // margin-right: 7px;
+        /*space between*/
+
+
+        .fa-linkedin-in,
+        .fa-github,
+        .fa-itch-io {
+            font-size: 25px;
+            line-height: 46px;
+        }
+    }
+}
+.social-burger input:checked ~ .icon-wrapper {
+    width: 500px;
+}
+
+.icon-wrapper a {
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.icon-wrapper a:hover {
+    color: $accentTwoColor;
+}
+
+.social-burger input{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.social-burger span {
+    position: absolute;
+    left: 30px;
+    width: 30px;
+    height: 4px;
+    border-radius: 50px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
