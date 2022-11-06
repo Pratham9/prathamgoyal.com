@@ -1,3 +1,5 @@
+import Typed from '../node_modules/typed.js/src/typed.js';
+
 var typed = new Typed('.auto-type-item', {
     strings: ["Hello!", "नमस्कार", "Salut!", "こんにちは！", "ਸਤਿ ਸ਼੍ਰੀ ਅਕਾਲ", "¡Hola!"],
     typeSpeed: 80,
