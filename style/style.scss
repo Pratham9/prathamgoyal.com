@@ -73,8 +73,9 @@ body {
 	width: 100%;
 	top: 0;
 	left: 0;
-	
+
 }
+
 .socials {
 	display: flex;
 	justify-content: center;
@@ -125,10 +126,11 @@ body {
 
 .content-burger,
 .menu {
-	display: flex;
+	display: -webkit-inline-flex;
 	justify-content: center;
 	align-items: center;
 }
+
 .content-burger {
 	position: relative;
 	float: right;
@@ -139,47 +141,58 @@ body {
 	border-radius: 50px;
 	overflow: hidden;
 	box-shadow: 0 2px 1px rgba(0, 0, 0, .2);
+
 	input {
 		width: 30px;
 		height: 30px;
 		cursor: pointer;
 		opacity: 0;
+
 		&:checked {
-			& ~ .menu {
+			&~.menu {
 				width: 450px;
 				opacity: 1;
 			}
-			& ~ span {
+
+			&~span {
 				background-color: #FF4D50;
+				left: 30px;
+
 				&:nth-child(2) {
 					transform: translateY(0) rotate(-600deg);
 				}
+
 				&:nth-child(3) {
 					transform: translateY(0) rotate(60deg);
 				}
+
 				&:nth-child(4) {
 					transform: translateX(8);
 				}
 			}
 		}
 	}
+
 	span {
 		position: absolute;
-		left: 30px;
+		
 		width: 30px;
 		height: 4px;
 		border-radius: 50px;
 		background-color: #666;
 		pointer-events: none;
 		transition: 1s;
+
 		&:nth-child(2) {
 			transform: translateY(-8px);
 		}
+
 		&:nth-child(3) {
 			transform: translateY(8px);
 		}
 	}
 }
+
 .menu {
 	margin: 0;
 	padding: 0;
@@ -187,9 +200,11 @@ body {
 	overflow: hidden;
 	opacity: 0;
 	transition: 0.5s;
+
 	li {
 		list-style: none;
 		margin: 0 10px;
+
 		a {
 			text-decoration: none;
 			color: #666;
@@ -199,36 +214,199 @@ body {
 			overflow: hidden;
 			text-overflow: clip;
 			transition: 0.5s;
+
 			&:hover {
 				color: #161919;
 			}
 		}
 	}
 }
+
 //--------------------------------------
 
 .typewriter {
 	text-align: center;
 	height: 90px;
 }
+
 .auto-type-item {
 	justify-content: center;
-	color: $secondaryColor;;
+	color: $secondaryColor;
+	;
 	font-size: 60px;
 }
+
 .typed-cursor {
 	position: relative;
 	color: $accentOneColor;
 	font-size: 70px;
 }
+
 .central {
 	display: block;
 	margin-left: 5px;
 	height: 90px;
+
 	.name {
 		text-align: center;
-		color: $tertiaryColor;;
+		color: $tertiaryColor;
+		;
 		font-weight: lighter;
 		font-size: 35px;
+	}
+}
+
+// -------------------------- 1024 ------------------------
+
+@media only screen and (width < 1024px){
+	.content-burger {
+		input {
+			&:checked {
+				
+				&~.menu {
+					flex-direction: column;
+					width: 150px;
+					opacity: 1;
+				}
+				&~span {
+					background-color: #FF4D50;
+					left: 5px;
+	
+					&:nth-child(2) {
+						transform: translateY(0) rotate(-600deg);
+					}
+	
+					&:nth-child(3) {
+						transform: translateY(0) rotate(60deg);
+					}
+	
+					&:nth-child(4) {
+						transform: translateX(8);
+					}
+				}
+			}
+		}
+		
+	}
+}
+@media only screen and (width < 724px){
+	.socials {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		float: left;
+		padding: 15px;
+		margin: 15px;
+		background-color: $white;
+		transition: 0.5s;
+		border-radius: 50px;
+		box-shadow: 0 2px 1px rgba(0, 0, 0, .2);
+		width: 30px;
+		height: 100px;
+		cursor: pointer;
+	}
+
+	.burger {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		transition: 0.5s;
+	
+		li {
+			list-style: none;
+			margin: 0 10px;
+	
+			a {
+				margin: 5px;
+				text-decoration: none;
+				color: $color_1;
+				text-transform: uppercase;
+				font-size: 30px;
+				font-weight: 600;
+				transition: 0.5s;
+	
+				&:hover {
+					color: $color_2;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (width < 370px){
+
+	.content-burger {
+		margin: 15px;
+		padding: 15px;
+		input {
+			&:checked {
+				&~.menu {
+					flex-direction: column;
+					width: 50%;
+					opacity: 1;
+
+					
+					li {
+						padding: 5px 0;
+
+						a {
+							font-size: 15px;
+						}
+					}
+				}
+			}
+		}
+		
+	}
+	.socials {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		float: left;
+		padding: 15px;
+		margin: 15px;
+		background-color: $white;
+		transition: 0.5s;
+		border-radius: 50px;
+		box-shadow: 0 2px 1px rgba(0, 0, 0, .2);
+		width: 30px;
+		height: 100px;
+		cursor: pointer;
+	}
+
+	.burger {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		transition: 0.5s;
+	
+		li {
+			list-style: none;
+			margin: 0 10px;
+	
+			a {
+				margin: 5px;
+				text-decoration: none;
+				color: $color_1;
+				text-transform: uppercase;
+				font-size: 30px;
+				font-weight: 600;
+				transition: 0.5s;
+	
+				&:hover {
+					color: $color_2;
+				}
+			}
+		}
 	}
 }
