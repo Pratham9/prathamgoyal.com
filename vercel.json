@@ -2,9 +2,10 @@
     "cleanUrls": true,
     "redirects": [
         {
-            "source": "http://prathamgoyal.com/",
-            "destination": "https://www.prathamgoyal.com/",
-            "permanent": true
+            "source": "/(.*)",
+            "destination": "https://www.prathamgoyal.com/$1",
+            "permanent": true,
+            "statusCode": 301
         }
     ]
 }
